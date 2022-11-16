@@ -1,25 +1,29 @@
 package org.example.tdas;
 
-public class PixBit extends Pixel {
-    int b;
+public class PixelBit extends Pixel {
 
-    public PixBit(int x, int y, int d, int b) {
+    int bit;
+
+    public PixelBit(int x, int y, int d, int bit) {
         super(x, y, d);
-        this.b = b;
+        this.bit = bit;
     }
 
-    public int getB() {
-        return b;
+    public int getBit() {
+        return bit;
     }
 
-    public void setB(int b) {
-        this.b = b;
+    public void setBit(int bit) {
+        this.bit = bit;
     }
 
     @Override
     public String toString() {
-        return "PixBit{" +
-                "b=" + b +
+        return "PixelBit{" +
+                "bit=" + bit +
+                ", x=" + x +
+                ", y=" + y +
+                ", d=" + d +
                 '}';
     }
 }
