@@ -1,16 +1,17 @@
 package org.example.tdas;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Image implements ImageOperation {
     int largo;
     int ancho;
-    List<Pixel> pixeles;
+    List<Pixel> pixels;
 
-    public Image(int largo, int ancho, List<Pixel> pixeles) {
+    public Image(int largo, int ancho, List<Pixel> pixels) {
         this.largo = largo;
         this.ancho = ancho;
-        this.pixeles = pixeles;
+        this.pixels = pixels;
     }
 
     public int getLargo() {
@@ -29,12 +30,21 @@ public class Image implements ImageOperation {
         this.ancho = ancho;
     }
 
-    public List<Pixel> getPixeles() {
-        return pixeles;
+    public List<Pixel> getPixels() {
+        return pixels;
     }
 
-    public void setPixeles(List<Pixel> pixeles) {
-        this.pixeles = pixeles;
+    public void setPixels(List<Pixel> pixels) {
+        this.pixels = pixels;
+    }
+
+    public void crop(int x1, int x2, int y1, int y2){
+        List<Pixel> filteredPixels =
+                pixels.stream()
+                        .filter(pixel -> pixel.getX() > x1 &&
+                                pixel.getY() > y1)
+                        .collect(Collectors.toList());
+        this.pixels = filteredPixels;
     }
 
     @Override
@@ -42,7 +52,7 @@ public class Image implements ImageOperation {
         return "Image{" +
                 "largo=" + largo +
                 ", ancho=" + ancho +
-                ", pixeles=" + pixeles +
+                ", pixeles=" + pixels +
                 '}';
     }
 }

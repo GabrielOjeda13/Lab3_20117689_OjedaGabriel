@@ -3,7 +3,6 @@ import org.example.tdas.Image;
 import org.example.tdas.Pixel;
 import org.example.tdas.PixelBit;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -74,10 +73,17 @@ public class Menu {
                 case 1:
                     //return menu.SubMenu(menu, image);
                 case 2:
+                    System.out.println("Ingrese un número int para la coordenada X en donde quiera recortar la imagen:");
+                    int x = input.nextInt();
+                    System.out.println("Ingrese otro número int para la coordenada Y X en donde quiera recortar la imagen:");
+                    int y = input.nextInt();
+                    int alt = image.getLargo();
+                    int anch = image.getAncho();
+                    image.crop(x,alt,y,anch);
                     //return menu.SubMenu(menu, image);
                 case 3:
                     int alto = image.getLargo();
-                    List<Pixel> pixels = image.getPixeles();
+                    List<Pixel> pixels = image.getPixels();
                     pixels.forEach(System.out::println);
                     return menu.SubMenu(menu, image);
                 case 4:
