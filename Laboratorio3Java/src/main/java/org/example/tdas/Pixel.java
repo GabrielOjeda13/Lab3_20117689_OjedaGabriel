@@ -1,6 +1,7 @@
 package org.example.tdas;
+import java.util.List;
 
-abstract class Pixel{
+public abstract class Pixel{
     int x;
     int y;
     int d;

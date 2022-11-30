@@ -36,4 +36,13 @@ public class Image implements ImageOperation {
     public void setPixeles(List<Pixel> pixeles) {
         this.pixeles = pixeles;
     }
+
+    @Override
+    public String toString() {
+        return "Image{" +
+                "largo=" + largo +
+                ", ancho=" + ancho +
+                ", pixeles=" + pixeles +
+                '}';
+    }
 }
