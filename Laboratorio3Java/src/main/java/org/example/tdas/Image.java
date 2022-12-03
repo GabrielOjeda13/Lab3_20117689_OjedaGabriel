@@ -42,7 +42,7 @@ public class Image implements ImageOperation {
         List<Pixel> filteredPixels =
                 pixels.stream()
                         .filter(pixel -> pixel.getX() > x1 &&
-                                pixel.getY() > y1)
+                                pixel.getX() <= x2 && pixel.getY() > y1 && pixel.getY() <= x2)
                         .collect(Collectors.toList());
         this.pixels = filteredPixels;
     }

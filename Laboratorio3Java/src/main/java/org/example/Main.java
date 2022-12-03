@@ -9,6 +9,9 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        VentanaPrincipal v1 = new VentanaPrincipal();
+        v1.setVisible(true);
+
         Scanner input = new Scanner(System.in);
         System.out.println("Menu Principal");
         int seleccion = 0;
@@ -20,6 +23,7 @@ public class Main {
             seleccion = input.nextInt();
             switch(seleccion) {
                 case 1:
+                    /*
                     System.out.println("CREANDO IMAGEN TIPO BIT\n");
                     System.out.println("Ingrese un número int para el ALTO de la Imagen y luego presione ENTER:");
                     int altoimg = input.nextInt();
@@ -44,12 +48,19 @@ public class Main {
                         contador = contador + 1;
                     }
                     var image = new Image(altoimg, anchoimg, pixels);
+                    */
+                    List<Pixel> pixels = new ArrayList<>();
+                    pixels.add(new PixelBit(0,0, 0, 3));
+                    pixels.add(new PixelBit(1,0, 1, 32));
+                    pixels.add(new PixelBit(0,1, 1, 323));
+                    pixels.add(new PixelBit(1,1, 0, 3));
+                    var image = new Image(2, 2, pixels);
 
                     System.out.println("Menu Secundario");
                     int seleccion2 = 0;
                     do {
                         System.out.print("1. Rotar Imagen \n");
-                        System.out.print("2. Histograma \n");
+                        System.out.print("2. Recortar Imagaen \n");
                         System.out.print("3. Imprimir imagen \n");
                         System.out.print("4. Volver a Crear una Imagen Nueva \n");
                         seleccion2 = input.nextInt();
@@ -69,11 +80,12 @@ public class Main {
                                 pixels.forEach(System.out::println);
                                 //return menu.SubMenu(menu, image);
                             case 4:
+                                seleccion = 4;
                                 //return menu.MenuPrincipal(menu);
                             default:
-                                System.out.println("Error, Seleccion Invalida");
+                                //System.out.println("Error, Seleccion Invalida");
                         }
-                    }while(seleccion != 4);
+                    }while(seleccion2 != 4);
                 case 2:
                     //return menu.SubMenu(menu, image);
                 case 3:
