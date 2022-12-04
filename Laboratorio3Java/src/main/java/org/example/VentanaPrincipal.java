@@ -1,4 +1,6 @@
 package org.example;
+import org.example.tdas.VentanaPrintImage;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -7,7 +9,9 @@ import java.awt.event.ActionListener;
 public class VentanaPrincipal extends JFrame{
     public JPanel panel;
 
+    boolean isCreateImage = false;
     VentanaCrearImagen v2;
+
     public VentanaPrincipal(){
         this.setSize(700,700); //Tamaño Ventana
         setLocationRelativeTo(null); //Centrar Ventana.
@@ -62,6 +66,7 @@ public class VentanaPrincipal extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 v2 = new VentanaCrearImagen();
                 v2.setVisible(true);
+                isCreateImage = true;
                 //setDefaultCloseOperation(EXIT_ON_CLOSE);
             }
         };
@@ -72,10 +77,16 @@ public class VentanaPrincipal extends JFrame{
         boton2.setOpaque(true);
         boton2.setBackground(Color.orange);
         boton2.setBounds(200,300, 300,40);
+        //if(isCreateImage=false){
+        //    boton2.setEnabled(false);
+        //    boton2.setBackground(Color.GRAY);
+        //}
         panel.add(boton2);
         ActionListener ImprimirImg = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                VentanaPrintImage vimg = new VentanaPrintImage(1,v2.v3.img);
+                vimg.setVisible(true);
                 System.out.println(v2.v3.img.getAncho());
                 System.out.println(v2.v3.img.getLargo());
                 v2.v3.img.getPixels().forEach(System.out::println);

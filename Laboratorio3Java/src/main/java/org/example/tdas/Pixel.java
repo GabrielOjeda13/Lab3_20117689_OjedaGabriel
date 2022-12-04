@@ -1,5 +1,6 @@
 package org.example.tdas;
 import java.util.List;
+import org.example.tdas.PixelBit;
 
 public abstract class Pixel{
     int x;

@@ -75,7 +75,7 @@ public class VentanaImage extends JFrame{
                     int largoimg = Integer.parseInt(input1.getText());
                     int anchoimg = Integer.parseInt(input2.getText());
                     int largoListPixels = largoimg*anchoimg;
-                    List<Pixel> pixels = new ArrayList<>();
+                    List<PixelBit> pixels = new ArrayList<>();
                     dispose();
                     int contador = 1;
                     img = new Image(largoimg, anchoimg, pixels);

@@ -49,11 +49,11 @@ public class Main {
                     }
                     var image = new Image(altoimg, anchoimg, pixels);
                     */
-                    List<Pixel> pixels = new ArrayList<>();
-                    pixels.add(new PixelBit(0,0, 0, 3));
-                    pixels.add(new PixelBit(1,0, 1, 32));
-                    pixels.add(new PixelBit(0,1, 1, 323));
-                    pixels.add(new PixelBit(1,1, 0, 3));
+                    List<PixelBit> pixels = new ArrayList<>();
+                    //pixels.add(new PixelBit(0,0, 0, 3));
+                    //pixels.add(new PixelBit(1,0, 1, 32));
+                    //pixels.add(new PixelBit(0,1, 1, 323));
+                    //pixels.add(new PixelBit(1,1, 0, 3));
                     var image = new Image(2, 2, pixels);
 
                     System.out.println("Menu Secundario");
@@ -74,7 +74,7 @@ public class Main {
                                 int y = input.nextInt();
                                 int alt = image.getLargo();
                                 int anch = image.getAncho();
-                                image.crop(x,alt,y,anch);
+                                //image.crop(x,alt,y,anch);
                                 //return menu.SubMenu(menu, image);
                             case 3:
                                 pixels.forEach(System.out::println);
