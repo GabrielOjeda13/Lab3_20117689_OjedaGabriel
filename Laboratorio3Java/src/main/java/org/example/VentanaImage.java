@@ -1,6 +1,5 @@
 package org.example;
 import org.example.tdas.Image;
-import org.example.tdas.Pixel;
 import org.example.tdas.PixelBit;
 import javax.swing.*;
 import java.awt.*;
@@ -54,7 +53,7 @@ public class VentanaImage extends JFrame{
         etiquetaLargo.setForeground(Color.YELLOW);
         etiquetaLargo.setFont(new Font("Roboto", Font.PLAIN, 15));
 
-        JLabel etiquetaAncho = new JLabel("Ingrese el Largo de la imagen", SwingConstants.CENTER);
+        JLabel etiquetaAncho = new JLabel("Ingrese el Ancho de la imagen", SwingConstants.CENTER);
         etiquetaAncho.setBounds(150,200, 300,40);
         panel.add(etiquetaAncho);
         etiquetaAncho.setForeground(Color.YELLOW);

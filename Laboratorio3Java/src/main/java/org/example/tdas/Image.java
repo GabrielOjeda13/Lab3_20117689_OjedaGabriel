@@ -7,8 +7,8 @@ public class Image implements ImageOperation {
     int largo;
     int ancho;
     List<PixelBit> pixelsBit;
-    List<PixelBit> pixelsHex;
-    List<PixelBit> pixelsRGB;
+    List<PixelHex> pixelsHex;
+    List<PixelRGB> pixelsRGB;
 
     public Image(int largo, int ancho, List<PixelBit> pixels) {
         this.largo = largo;
@@ -40,15 +40,23 @@ public class Image implements ImageOperation {
         this.pixelsBit = pixels;
     }
 
-    /*
     public void crop(int x1, int x2, int y1, int y2){
-        List<Pixel> filteredPixels =
-                pixels.stream()
+        List<PixelBit> filteredPixels =
+                pixelsBit.stream()
                         .filter(pixel -> pixel.getX() > x1 &&
                                 pixel.getX() <= x2 && pixel.getY() > y1 && pixel.getY() <= x2)
                         .collect(Collectors.toList());
-        this.pixels = filteredPixels;
-    }*/
+        this.pixelsBit = filteredPixels;
+    }
+
+    public boolean isCompressed(){
+        if(pixelsBit.size() == ancho * largo){
+            return false;
+        } else {
+            return true;
+        }
+    }
+
 
     @Override
     public String toString() {

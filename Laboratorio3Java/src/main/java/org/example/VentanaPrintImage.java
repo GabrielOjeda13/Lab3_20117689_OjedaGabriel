@@ -1,5 +1,7 @@
-package org.example.tdas;
+package org.example;
 import org.example.VentanaPixBit;
+import org.example.tdas.Image;
+import org.example.tdas.PixelBit;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,9 +13,9 @@ import java.util.List;
 public class VentanaPrintImage extends JFrame{
     public JPanel panel;
     public int tipo;
-    Image img;
+    org.example.tdas.Image img;
 
-    public VentanaPrintImage(int tipo, Image img){
+    public VentanaPrintImage(int tipo, org.example.tdas.Image img){
         this.tipo = tipo;
         this.img = img;
         this.setSize(600,600); //Tamaño Ventana

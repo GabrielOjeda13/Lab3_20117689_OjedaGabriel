@@ -1,0 +1,20 @@
+AUTOEVALUACIÓN GABRIEL OJEDA ROMERO
+0: No realizado – 0.25: Funciona 25% de las veces – 0.5: Funciona 50% de las veces –       0.75: Funciona 75% de las veces – 1: Funciona 100% de las veces  
+FUNCIONALIDADES			EVALUACIÓN
+Clases y metodos			0.5
+TDA imagen + interface		0.25
+Clases Pixeles			1
+Clases Menu	interactivo		1
+Clase Interfaz Grafica		1
+
+
+NO FUNCIONALES			EVALUACIÓN
+Compilador				1
+Lenguaje Java			1
+Capas de modelo y vista		1
+Documentación			0.25
+Organización de codigo		0.75
+Diagrama UML	previo	0
+Diagrama UML    posterior	1
+GitHub				1
+Instrucciones Funcionales	1

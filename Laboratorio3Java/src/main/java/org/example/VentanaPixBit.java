@@ -14,10 +14,10 @@ public class VentanaPixBit extends JFrame{
     JFormattedTextField  inputbit;
     JFormattedTextField  inputD;
     int n;
-    Image imagen;
+    org.example.tdas.Image imagen;
 
     PixelBit pixelBit;
-    public VentanaPixBit(int n, Image img){
+    public VentanaPixBit(int n, org.example.tdas.Image img){
         this.n = n;
         this.imagen = img;
         this.setSize(600,800); //Tamaño Ventana
