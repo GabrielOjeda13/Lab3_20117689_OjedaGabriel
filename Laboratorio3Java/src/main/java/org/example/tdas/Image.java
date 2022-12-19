@@ -1,19 +1,18 @@
 package org.example.tdas;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class Image implements ImageOperation {
-    int largo;
-    int ancho;
-    List<PixelBit> pixelsBit;
-    List<PixelHex> pixelsHex;
-    List<PixelRGB> pixelsRGB;
+    private int largo;
+    private int ancho;
+    List<AllPixels> pixels;
 
-    public Image(int largo, int ancho, List<PixelBit> pixels) {
+    public Image(int largo, int ancho, List<AllPixels> pixels) {
         this.largo = largo;
         this.ancho = ancho;
-        this.pixelsBit = pixels;
+        this.pixels = pixels;
     }
 
     public int getLargo() {
@@ -32,30 +31,47 @@ public class Image implements ImageOperation {
         this.ancho = ancho;
     }
 
-    public List<PixelBit> getPixels() {
-        return pixelsBit;
+    public List<AllPixels> getPixels() {
+        return pixels;
     }
 
-    public void setPixels(List<PixelBit> pixels) {
-        this.pixelsBit = pixels;
+    public void setPixels(List<AllPixels> pixels) {
+        this.pixels = pixels;
     }
 
     public void crop(int x1, int x2, int y1, int y2){
-        List<PixelBit> filteredPixels =
-                pixelsBit.stream()
-                        .filter(pixel -> pixel.getX() > x1 &&
-                                pixel.getX() <= x2 && pixel.getY() > y1 && pixel.getY() <= x2)
-                        .collect(Collectors.toList());
-        this.pixelsBit = filteredPixels;
+        List<AllPixels> nuevo = new ArrayList<>();
+        for (AllPixels pixel : pixels) {
+            if (pixel.getX() >= x1 && pixel.getX() <= x2 && pixel.getY() >= y1 && pixel.getY() <= y2) {
+                nuevo.add(pixel);
+            }
+        }
+        this.setPixels(nuevo);
     }
 
     public boolean isCompressed(){
-        if(pixelsBit.size() == ancho * largo){
+        if(pixels.size() == ancho * largo){
             return false;
         } else {
             return true;
         }
     }
+
+    public void imageFlipH(){
+        getPixels().forEach(pixel -> pixel.pixelFlipH(ancho));
+    }
+
+    public void imageFlipV(){
+        getPixels().forEach(pixel -> pixel.pixelFlipV(largo));
+    }
+
+    public void imgRGBToHex(){
+        for (AllPixels pixel : pixels) {
+            pixel.hexToRGB();
+        }
+    }
+
+
 
 
     @Override
@@ -63,7 +79,7 @@ public class Image implements ImageOperation {
         return "Image{" +
                 "largo=" + largo +
                 ", ancho=" + ancho +
-                ", pixeles=" + pixelsBit +
+                ", pixeles=" + pixels +
                 '}';
     }
 }
