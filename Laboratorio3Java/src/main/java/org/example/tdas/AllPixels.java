@@ -126,6 +126,9 @@ public class AllPixels {
         int r = getR();
         int g = getG();
         int b = getB();
+        setG(-999);
+        setB(-999);
+        setR(-999);
         setHex(String.format("#%02x%02x%02x", r, g, b));
         tipoPixel = 2;
     }
