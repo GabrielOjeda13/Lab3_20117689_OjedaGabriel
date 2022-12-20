@@ -1,5 +1,6 @@
 package org.example;
 import org.example.VentanaPixBit;
+import org.example.tdas.AllPixels;
 import org.example.tdas.Image;
 import org.example.tdas.PixelBit;
 
@@ -50,7 +51,7 @@ public class VentanaPrintImage extends JFrame{
         while(i<largoPixels){
             int coordx=250;
             int coordy=100;
-            PixelBit pixel = img.getPixels().get(i);
+            AllPixels pixel = img.getPixels().get(i);
             xanterior = x1;
             yanterior = y1;
             x1 = pixel.getX();

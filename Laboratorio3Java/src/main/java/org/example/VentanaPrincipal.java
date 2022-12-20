@@ -94,7 +94,7 @@ public class VentanaPrincipal extends JFrame{
                 vimg.setVisible(true);
                 System.out.println(v2.v3.img.getAncho());
                 System.out.println(v2.v3.img.getLargo());
-                v2.v3.img.getPixels().forEach(System.out::println);
+                //v2.v3.img.getPixels().forEach(System.out::toString);
                 //setDefaultCloseOperation(EXIT_ON_CLOSE);
             }
         };

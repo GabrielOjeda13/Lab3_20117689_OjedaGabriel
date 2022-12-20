@@ -1,4 +1,5 @@
 package org.example;
+import org.example.tdas.AllPixels;
 import org.example.tdas.Image;
 import org.example.tdas.PixelBit;
 
@@ -16,7 +17,7 @@ public class VentanaPixBit extends JFrame{
     int n;
     org.example.tdas.Image imagen;
 
-    PixelBit pixelBit;
+    AllPixels pixel;
     public VentanaPixBit(int n, org.example.tdas.Image img){
         this.n = n;
         this.imagen = img;
@@ -86,8 +87,8 @@ public class VentanaPixBit extends JFrame{
                 int y = Integer.parseInt(inputY.getText());
                 int bit = Integer.parseInt(inputbit.getText());
                 int d = Integer.parseInt(inputD.getText());
-                pixelBit = new PixelBit(x, y, d, bit);
-                imagen.getPixels().add(pixelBit);
+                pixel = new AllPixels(x, y, d, bit, 0,0,0,"",1);
+                imagen.getPixels().add(pixel);
                 dispose();
                 //setDefaultCloseOperation(EXIT_ON_CLOSE);
             }

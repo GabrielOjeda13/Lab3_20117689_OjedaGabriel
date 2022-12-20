@@ -9,7 +9,7 @@ public class AllPixels {
     private int g;
     private int b;
     private String hex;
-    private int tipoPixel;
+    public int tipoPixel;
 
     public AllPixels(int x, int y, int d, int bit, int r, int g, int b, String hex, int tipoPixel) {
         this.r = x;
@@ -93,6 +93,19 @@ public class AllPixels {
         this.tipoPixel = tipoPixel;
     }
 
+    public boolean isPixbit(){
+        return getTipoPixel()== 1;
+
+    }
+
+    public boolean isPixhex(){
+        return getTipoPixel()== 2;
+
+    }
+    public boolean isPixRGB(){
+        return getTipoPixel()== 3;
+    }
+
     public void pixelFlipV(int largo) {
         if (x < largo - 1) {
             x = x + 1;
@@ -109,11 +122,6 @@ public class AllPixels {
         }
     }
 
-    public void pixelRotar90(){
-        this.x = y;
-        this.y = -x;
-    }
-
     public void hexToRGB(){
         int r = getR();
         int g = getG();
@@ -122,15 +130,24 @@ public class AllPixels {
         tipoPixel = 2;
     }
 
+    public void pixelRotate90(){
+        this.x = y;
+        this.y = -x;
+    }
+
     @Override
     public String toString() {
-        return "Colores{" +
-                "r=" + r +
-                ", g=" + g +
-                ", b=" + b +
-                ", bit=" + bit +
-                ", hex='" + hex + '\'' +
-                '}';
+            return "Pixel{" +
+                    "x=" + x +
+                    ", y=" + y +
+                    ", bit=" + bit +
+                    ", r=" + r +
+                    ", g=" + g +
+                    ", b=" + b +
+                    ", hex=" + hex +
+                    ", d=" + d + '\'' +
+                    '}';
+
     }
 
 

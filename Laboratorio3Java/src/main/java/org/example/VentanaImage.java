@@ -1,4 +1,5 @@
 package org.example;
+import org.example.tdas.AllPixels;
 import org.example.tdas.Image;
 import org.example.tdas.PixelBit;
 import javax.swing.*;
@@ -74,7 +75,7 @@ public class VentanaImage extends JFrame{
                     int largoimg = Integer.parseInt(input1.getText());
                     int anchoimg = Integer.parseInt(input2.getText());
                     int largoListPixels = largoimg*anchoimg;
-                    List<PixelBit> pixels = new ArrayList<>();
+                    List<AllPixels> pixels = new ArrayList<>();
                     dispose();
                     int contador = 1;
                     img = new Image(largoimg, anchoimg, pixels);

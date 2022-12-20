@@ -38,6 +38,30 @@ public class Image implements ImageOperation {
     public void setPixels(List<AllPixels> pixels) {
         this.pixels = pixels;
     }
+    public boolean isBitmap(){
+        for (AllPixels pixel : pixels) {
+            if (!pixel.isPixbit()) {
+                return false;
+            }
+        }
+        return true;
+    }
+    public boolean isPixmap(){
+        for (AllPixels pixel : pixels) {
+            if (!pixel.isPixRGB()) {
+                return false;
+            }
+        }
+        return true;
+    }
+    public boolean isHexmap(){
+        for (AllPixels pixel : pixels) {
+            if (!pixel.isPixhex()) {
+                return false;
+            }
+        }
+        return true;
+    }
 
     public void crop(int x1, int x2, int y1, int y2){
         List<AllPixels> nuevo = new ArrayList<>();
@@ -71,7 +95,9 @@ public class Image implements ImageOperation {
         }
     }
 
-
+    public void imageRotate90(){
+        getPixels().forEach(pixel -> pixel.pixelRotate90());
+    }
 
 
     @Override
